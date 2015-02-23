@@ -67,6 +67,12 @@ module.exports = function(grunt) {
       },
 
       all: { src: ['test/**/*.js'] }
+    },
+
+    jshint: {
+      options: {
+	jshintrc: true
+      }
     }
   });
 
@@ -75,7 +81,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-simple-mocha');
-
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  
   grunt.registerTask('debug', [
     'browserify:dev'
   ]);
