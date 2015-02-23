@@ -59,11 +59,11 @@ module.exports = function(grunt) {
 
     simplemocha: {
       options: {
-	globals: ['should'],
-	timeout: 3000,
-	ignoreLeaks: false,
-	ui: 'bdd',
-	reporter: 'tap'
+	      globals: ['should'],
+	      timeout: 3000,
+	      ignoreLeaks: false,
+	      ui: 'bdd',
+	      reporter: 'tap'
       },
 
       all: { src: ['test/**/*.js'] }
@@ -82,7 +82,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-simple-mocha');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  
+
   grunt.registerTask('debug', [
     'browserify:dev'
   ]);
@@ -100,9 +100,10 @@ module.exports = function(grunt) {
   grunt.registerTask('test', [
     'simplemocha'
   ]);
-  
+
   grunt.registerTask('default', [
     'debug',
+    'jshint',
     'simplemocha'
   ]);
 };
